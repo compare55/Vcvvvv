@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Money Coming</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="money-coming-luxury.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <button class="back-icon" onclick="location.href='index.html'">←</button>
+    <div class="logo">💰 Money Coming</div>
+    <div class="nav-wallet">
+      <div class="coin-display">🪙 <span id="navBalance">1000</span></div>
+      <button class="nav-btn" onclick="openWallet()">Wallet</button>
+    </div>
+  </header>
+
+  <main class="page">
+    <div class="mc-container">
+
+      <div class="mc-top-bar">
+        <div class="mc-balance">Balance: <span id="mcBalance">1000</span> 🪙</div>
+        <div class="mc-bet-control">
+          <label>Bet:
+            <select id="mcBet">
+              <option value="10">10</option>
+              <option value="50" selected>50</option>
+              <option value="100">100</option>
+              <option value="500">500</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="mc-reels-wrapper">
+        <div class="mc-reels" id="mcReels"></div>
+        <div class="mc-multiplier-display" id="mcMultiplierDisplay">1x</div>
+      </div>
+
+      <div class="mc-controls">
+        <button id="mcSpinBtn" class="mc-spin-btn">SPIN</button>
+      </div>
+
+      <div id="mcMessage" class="mc-message"></div>
+
+      <div id="luckyWheelModal" class="modal hidden">
+        <div class="modal-content mc-wheel-modal">
+          <h2>🎡 Lucky Wheel</h2>
+          <div class="mc-wheel-container">
+            <div class="mc-wheel" id="mcWheel">
+              <div class="mc-wheel-pointer">▼</div>
+            </div>
+            <div class="mc-wheel-result" id="mcWheelResult">?</div>
+          </div>
+          <button class="modal-close" onclick="closeWheel()">Collect Prize</button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <div id="walletModal" class="modal hidden">
+    <div class="modal-content">
+      <h2>💰 My Wallet</h2>
+      <div class="wallet-balance">
+        <div class="wb-label">Available Coins</div>
+        <div class="wb-amount">🪙 <span id="walletBalance">1000</span></div>
+      </div>
+      <div class="wallet-actions">
+        <button class="btn-add" onclick="addCoins()">+ Add Coins</button>
+        <button class="btn-withdraw" onclick="withdrawCoins()">↓ Withdraw</button>
+      </div>
+      <div class="wallet-info"><p>⚠️ Virtual coins only. No real money involved.</p></div>
+      <h3 style="margin-top:1.5rem;">Transaction History</h3>
+      <div id="txHistory" class="tx-history"></div>
+      <button class="modal-close" onclick="closeWallet()">Close</button>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="money-coming.js"></script>
+</body>
+</html>
